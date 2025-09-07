@@ -12,12 +12,10 @@
     }
 
     .cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
-        @media screen and (max-width: 1024px) {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 32px;
 
         .card {
             background-color: unset;
@@ -71,9 +69,23 @@
 
 .carousel-wrapper {
     max-width: 1200px;
+    width: 100%;
     margin: 30px auto;
     height: 300px;
     position: relative;
+    box-sizing: border-box;
+    
+    @media screen and (max-width: 1280px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 300px;
+    }
+}
+
+.carousel-container {
+  padding: 0 16px; /* small gutter so items don’t touch edges */
 }
 
 .carousel-button-group {
@@ -85,7 +97,7 @@
     justify-content: space-between;
     padding: 0 20px;
     pointer-events: none; // to allow clicks to pass through
-    transform: translateX(-60px);
+    // transform: translateX(-60px);
     width: 110%;
 
     div {
@@ -100,16 +112,42 @@
         transition: background 0.3s;
         position: relative;
 
-        &.left svg {
+        &.left {
             position: absolute;
-            top: calc(50% - 12px);
-            left: calc(50% - 8px);
+            left: -45px;
+
+            svg {
+                position: absolute;
+                top: calc(50% - 12px);
+                left: calc(50% - 8px);
+            }
+
+            @media screen and (max-width: 1280px) {
+                left: -36px;
+            }
+
+            @media screen and (max-width: 768px) {
+                left: -38px;                
+            }
         }
 
-        &.right svg {
+        &.right {
             position: absolute;
-            top: calc(50% - 12px);
-            left: calc(50% - 10px);
+            right: 76px;
+
+            svg {
+                position: absolute;
+                top: calc(50% - 12px);
+                left: calc(50% - 10px);
+            }
+            
+            @media screen and (max-width: 1280px) {
+                right: 39px;
+            }
+
+            @media screen and (max-width: 768px) {
+                right: -10px;                
+            }
         }
 
 
@@ -149,13 +187,13 @@
 }
 
 .react-multi-carousel-item--active .item {
-  transform: scale(0.9);
-  opacity: 0.6;
+    transform: scale(0.9);
+    opacity: 0.6;
 }
 
 /* scale up the middle one */
 .react-multi-carousel-item--active:nth-child(2) .item {
-  transform: scale(1.5);
-  opacity: 1;
-  z-index: 2;
+    transform: scale(1.5);
+    opacity: 1;
+    z-index: 2;
 }

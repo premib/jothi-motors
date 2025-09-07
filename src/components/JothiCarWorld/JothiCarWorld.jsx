@@ -41,22 +41,20 @@ const aboutUs = [
     }
 ]
 const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.   
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5
-    },
     desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3
+        breakpoint: { max: 3000, min: 1280 },
+        items: 3,
+        partialVisibilityGutter: 40 // this is needed to tell the amount of px that should be visible.
     },
     tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
+        breakpoint: { max: 1280, min: 768 },
+        items: 2,
+        partialVisibilityGutter: 30 // this is needed to tell the amount of px that should be visible.
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
+        breakpoint: { max: 768, min: 0 },
+        items: 1,
+        partialVisibilityGutter: 30 // this is needed to tell the amount of px that should be visible.
     }
 };
 

@@ -27,8 +27,8 @@ import Logo from '../Logo';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = [ 'Wholesale Dealers', 'Products', 'Contact Us'];
-const jothiBrands = ['Jothi car world', 'Jothi electrical']
+const navItems = ['Wholesale Dealers', 'Products', 'Contact Us'];
+const jothiBrands = ['Jothi car world']
 const actualWindow = window
 
 function NavBar({ window, onHeightChange }) {
@@ -73,27 +73,31 @@ function NavBar({ window, onHeightChange }) {
             if (item === 'Wholesale Dealers') {
               return (
                 <>
-                <ListItem  key={item} disablePadding >
-                  <ListItemButton onClick={handleDrawerClick}>
-                    <ListItemText primary={item} />
-                    {openDrawer ? <ExpandLess /> : <ExpandMore />}
-                  </ListItemButton>
-                </ListItem>
-                  <Collapse  in={openDrawer} timeout="auto" unmountOnExit >
+                  <ListItem key={item} disablePadding >
+                    <ListItemButton onClick={handleDrawerClick}>
+                      <ListItemText primary={item} />
+                      {openDrawer ? <ExpandLess /> : <ExpandMore />}
+                    </ListItemButton>
+                  </ListItem>
+                  <Collapse in={openDrawer} timeout="auto" unmountOnExit >
                     <List component="div" disablePadding>
                       {
-                        jothiBrands.map((brand) => (
-                          <ListItemButton key={brand} sx={{ p: 0, pl: 4}}>
-                            <ListItemText primary={brand} />
-                          </ListItemButton>
-                        ))
+                        jothiBrands.map((brand) => {
+
+                          let href = brand.toLowerCase().replace(/\s+/g, '-')
+                          return (
+                            <ListItemButton href={href} key={brand} sx={{ p: 0, pl: 4 }}>
+                              <ListItemText primary={brand} />
+                            </ListItemButton>
+                          )
+                        })
                       }
                     </List>
                   </Collapse></>
               )
             } else {
               return (
-                <ListItem  key={item} disablePadding >
+                <ListItem key={item} disablePadding >
                   <ListItemButton href={`/${href}`} sx={{ textAlign: 'center' }}>
                     <ListItemText primary={item} />
                   </ListItemButton>
@@ -114,7 +118,7 @@ function NavBar({ window, onHeightChange }) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
+
   const handleRedirect = (to) => {
     console.log('redirecting to', to);
     actualWindow.location.href = to;
@@ -155,7 +159,7 @@ function NavBar({ window, onHeightChange }) {
                     <Button sx={{ color: '#fff', marginRight: '10px' }}
                       aria-controls={open ? 'basic-menu' : undefined} onClick={handleClick} >
                       {item}
-                      <ExpandMore  sx={{ ml: 0.25, padding: 0 }} />
+                      <ExpandMore sx={{ ml: 0.25, padding: 0 }} />
                     </Button>
                     <Menu
                       anchorEl={anchorEl}
@@ -166,13 +170,13 @@ function NavBar({ window, onHeightChange }) {
                           'aria-labelledby': 'basic-button',
                         },
                       }}
-                    > 
-                    {
-                      jothiBrands.map((brand) => {
-                        let href = brand.toLowerCase().replace(/\s+/g, '-')
-                        return <MenuItem key={brand} onClick={() => handleRedirect(href)}>{brand}</MenuItem>
-                      })
-                    }
+                    >
+                      {
+                        jothiBrands.map((brand) => {
+                          let href = brand.toLowerCase().replace(/\s+/g, '-')
+                          return <MenuItem key={brand} onClick={() => handleRedirect(href)}>{brand}</MenuItem>
+                        })
+                      }
                     </Menu>
                   </>
                 )
@@ -194,7 +198,7 @@ function NavBar({ window, onHeightChange }) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
