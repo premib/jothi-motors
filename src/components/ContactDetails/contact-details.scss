@@ -1,0 +1,58 @@
+@import '../../variables.scss';
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    h2 {
+        align-self: center;
+    }
+
+    border-left: 1px solid #ccc;
+    padding-left: 40px;
+
+    p a {
+        color: $color3;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .whatsappButton {
+        align-self: center;
+        width: 'max-content';
+        border-radius: 0 !important;
+        font-size: 17px;
+        background: #edf2f2;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 1px solid #2e3944 ;
+        border-radius: 7px !important;
+        padding: 8px 17px;
+
+        &:hover {
+            width: max-content;
+            border-radius: 0;
+            font-size: 17px;
+            background-color: #2e3944 !important;
+            color: white;
+
+            svg {
+                color: lightgreen;
+            }
+        }
+
+        svg {
+            font-size: 30px;
+            color: green;
+            margin-right: 5px;
+
+
+        }
+    }
+}

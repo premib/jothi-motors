@@ -1,0 +1,162 @@
+@import '../../variables.scss';
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.about-us {
+
+    .description {
+        margin: 40px 0px;
+        text-align: left;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .card {
+            background-color: unset;
+
+            h5,
+            h3 {
+                margin: 0;
+                padding: 0;
+            }
+
+            h4 {
+                opacity: 0.6;
+                margin: 10px 0;
+            }
+
+            span {
+                background-color: $color3;
+                display: inline-block;
+                width: 68px;
+                height: 68px;
+                padding: 6px;
+                border-radius: 50%;
+                position: relative;
+
+                svg {
+                    color: white;
+                    position: absolute;
+                    top: calc(50% - 17.5px);
+                    left: calc(50% - 17.5px);
+
+                    &[data-testid="GavelIcon"] {
+                        left: calc(50% - 16px);
+                        top: calc(50% - 19px);
+                    }
+                }
+            }
+
+            img {
+                height: 60px;
+                width: 60px;
+                object-fit: cover;
+            }
+
+            .title,
+            .information {
+                // background-color: red;
+            }
+        }
+    }
+}
+
+.carousel-wrapper {
+    max-width: 1200px;
+    margin: 30px auto;
+    height: 300px;
+    position: relative;
+}
+
+.carousel-button-group {
+    position: absolute;
+    top: 32%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none; // to allow clicks to pass through
+    transform: translateX(-60px);
+    width: 110%;
+
+    div {
+        pointer-events: all; // re-enable pointer events for buttons
+        background: $color3;
+        border: none;
+        color: white;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+        position: relative;
+
+        &.left svg {
+            position: absolute;
+            top: calc(50% - 12px);
+            left: calc(50% - 8px);
+        }
+
+        &.right svg {
+            position: absolute;
+            top: calc(50% - 12px);
+            left: calc(50% - 10px);
+        }
+
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        &.disable {
+            background: rgba(0, 0, 0, 0.2);
+            cursor: not-allowed;
+        }
+    }
+
+
+}
+
+.custom-dot-list-style {
+    position: absolute !important;
+    margin-top: 20px;
+    display: flex !important;
+    justify-content: center;
+    bottom: 30px;
+
+    .custom-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: gray;
+        border: 1.5px solid black;
+        margin: 0 6px;
+        cursor: pointer;
+    }
+
+    .custom-dot.active {
+        background: black;
+    }
+}
+
+.react-multi-carousel-item--active .item {
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+
+/* scale up the middle one */
+.react-multi-carousel-item--active:nth-child(2) .item {
+  transform: scale(1.5);
+  opacity: 1;
+  z-index: 2;
+}

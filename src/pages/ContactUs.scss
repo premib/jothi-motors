@@ -1,0 +1,14 @@
+.contact-us {
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 4px;
+    }
+}

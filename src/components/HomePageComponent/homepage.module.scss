@@ -1,0 +1,122 @@
+@import '../../variables.scss';
+
+.hero {
+    width: 100%;
+    height: 500px;
+    background: url("images/store-front.webp") center/cover no-repeat;
+
+    @media screen and (max-width: 768px) {
+        height: 300px;
+    }
+}
+
+.main-description {
+    background-color: $color5;
+    margin: 0;
+    width: 100%;
+    padding: 40px 0;
+    text-transform: uppercase;
+
+    h1 {
+        max-width: 1280px;
+        margin: auto;
+        font-size: 24px;
+        font-weight: 600;
+        color: $color1;
+
+        @media screen and (max-width: 1024px) {
+            max-width: 768px;
+            
+        }
+    }
+}
+
+
+.added-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+    align-items: center;
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    a {
+        color: $color3;
+    }
+}
+
+.about-us {
+    text-align: center;
+
+    .title {
+        text-transform: uppercase;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+            
+        }
+
+        .card {
+            width: 100%;
+            background: $color5;
+            border-radius: 25px;
+            color: black;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: 320px;
+                border-radius: 55%;
+                object-fit: cover;
+                object-position: bottom;
+
+                margin-bottom: 12px;
+
+                @media screen and (max-width: 1024px) {
+                    height: 250px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                background-color: $color2;
+                transform: scale(1.05);
+                transition: all 0.3s ease-in-out;
+                color: white;
+            }
+        }
+    }
+}
+
+footer {
+    height: 200px;
+    background: $color2;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

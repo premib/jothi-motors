@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+
+nav {
+    background-color: $color1 !important;
+}
+
+.mobile-drawer {
+    .MuiPaper-root {
+        background-color: $color1 !important;
+        color: $color5 !important;
+    }
+}
