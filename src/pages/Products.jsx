@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 
 const products = [
     { id: 1, name: 'Product 1', image: '/images/product1.jpg' },
@@ -26,6 +27,10 @@ const products = [
 ];
 
 export default function Products() {
+    useEffect(() => {
+        document.title = 'Products - Jothi Motor Spares';
+    }, []);
+
     return (
         <div style={{ padding: '2rem' }}>
             <h2>Products</h2>

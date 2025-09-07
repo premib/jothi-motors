@@ -1,4 +1,9 @@
+import React, { useEffect } from 'react';
 export default function NotFound() {
+    useEffect(() => {
+        document.title = '404 - Page Not Found';
+    }, []);
+
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
             <h1 className="text-6xl font-bold text-gray-800">404</h1>
