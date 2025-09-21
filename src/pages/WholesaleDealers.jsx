@@ -111,7 +111,7 @@ export default function WholesaleDealers() {
                             </div>
                             {company.images.map((img, imgIndex) => (
                                 <div className={styles['img-container']} key={imgIndex}>
-                                    <img src={img}  alt={`${company.name} ${imgIndex + 1}`} />
+                                    <img src={img} loading='lazy'  alt={`${company.name} ${imgIndex + 1}`} />
                                 </div>
                             ))}
                         </TabPanel>
