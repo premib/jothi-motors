@@ -1,0 +1,33 @@
+.main {
+    .logo-container {
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        img {
+            max-width: 50px;
+
+            @media screen and (min-width: 768px) {
+                max-width: 100px;
+            }
+        }
+    }
+
+    .img-container {
+        margin-bottom: 20px;
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .tabs {
+        max-width: 100%;
+        width: 100vw;
+
+        @media screen and (min-width: 768px) {
+            width: 95vw;
+            translate: transformX(2.5vw);
+        }
+    }
+}

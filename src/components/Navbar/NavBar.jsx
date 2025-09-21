@@ -27,7 +27,7 @@ import Logo from '../Logo';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Wholesale Dealers', 'Products', 'Contact Us'];
+const navItems = ['Wholesale Dealers', 'Auto Spares', 'Other Businesses', 'Contact Us'];
 const jothiBrands = ['Jothi car world']
 const actualWindow = window
 
@@ -70,7 +70,7 @@ function NavBar({ window, onHeightChange }) {
           navItems.map((item) => {
             let href = item.toLowerCase().replace(/\s+/g, '-')
 
-            if (item === 'Wholesale Dealers') {
+            if (item === 'Other Businesses') {
               return (
                 <>
                   <ListItem key={item} disablePadding >
@@ -153,7 +153,7 @@ function NavBar({ window, onHeightChange }) {
             {navItems.map((item) => {
               let href = item.toLowerCase().replace(/\s+/g, '-')
 
-              if (item === 'Wholesale Dealers') {
+              if (item === 'Other Businesses') {
                 return (
                   <>
                     <Button sx={{ color: '#fff', marginRight: '10px' }}

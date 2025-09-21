@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound';
 import ContactUs from './pages/ContactUs';
 import Products from './pages/Products';
 import HomeJothiAuto from './pages/JothiAuto/Home';
+import WholesaleDealers from './pages/WholesaleDealers';
 
 function App() {
   const [navHeight, setNavHeight] = useState(66);  
@@ -36,6 +37,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path='/products' element={<Products />} />
             <Route path='/jothi-car-world' element={<HomeJothiAuto />} />
+            <Route path='/wholesale-dealers' element={<WholesaleDealers />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
