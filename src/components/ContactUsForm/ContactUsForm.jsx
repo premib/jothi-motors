@@ -56,7 +56,7 @@ const ContactUsForm = () => {
         validateFields();
 
         if (Object.keys(errors).length === 0) {
-            window.location.href = `mailto:ashwinkumar948@gmail.com?subject=Contact%20from%20${encodeURIComponent(form.name)}&body=${encodeURIComponent(form.message + (form.phone ? `\n\nPhone: ${form.phone}` : ''))}`
+            window.location.href = `mailto:viknesh006@gmail.com?subject=Contact%20from%20${encodeURIComponent(form.name)}&body=${encodeURIComponent(form.message + (form.phone ? `\n\nPhone: ${form.phone}` : ''))}`
         }
     };
 
