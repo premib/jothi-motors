@@ -38,12 +38,17 @@ export default function AutoSpares() {
             logo: '/images/auto-spares/logo/eicher-logo.png'
         },
         {
+            name: 'LIGHTS',
+            images: Array.from({ length: 21 }).map((_, index) => `/images/auto-spares/lights-${index + 1}.jpg`),
+            logo: '/images/auto-spares/logo/suzuki-logo.png'
+        },
+        {
             name: 'FUEL TANK CAP',
             images: Array.from({ length: 2 }).map((_, index) => `/images/auto-spares/fuel-tank-cap-${index + 1}.jpg`),
             logo: '/images/auto-spares/logo/leyland-logo.png'
         }
         , {
-            name: 'AUTOMATIVE LED LAMPS',
+            name: 'AUTOMATIVE LED LAMP',
             images: Array.from({ length: 6 }).map((_, index) => `/images/auto-spares/automative-led-lamp-${index + 1}.jpg`),
             logo: '/images/auto-spares/logo/benz-logo.png'
         },
@@ -101,7 +106,28 @@ export default function AutoSpares() {
             name: 'BALANCE ROD BUSH',
             images: Array.from({ length: 1 }).map((_, index) => `/images/auto-spares/balance-rod-bush-${index + 1}.jpg`),
             logo: '/images/auto-spares/logo/suzuki-logo.png'
-        }
+        },
+        {
+            name: 'COMBINATION SWITCH',
+            images: Array.from({ length: 31 }).map((_, index) => `/images/auto-spares/combination-switch-${index + 1}.jpg`),
+            logo: '/images/auto-spares/logo/suzuki-logo.png'
+        },
+        {
+            name: 'FUEL PUMP MOTOR',
+            images: Array.from({ length: 3 }).map((_, index) => `/images/auto-spares/fuel-pump-motor-${index + 1}.jpg`),
+        },
+        {
+            name: 'SPRAY MOTOR',
+            images: Array.from({ length: 2 }).map((_, index) => `/images/auto-spares/spray-motor-${index + 1}.jpg`),
+        },
+        {
+            name: 'THERMOSTAT',
+            images: Array.from({ length: 13 }).map((_, index) => `/images/auto-spares/thermostat-${index + 1}.jpg`),
+        },
+        {
+            name: 'OIL PRESSURE SWITCH',
+            images: Array.from({ length: 6 }).map((_, index) => `/images/auto-spares/oil-pressure-switch-${index + 1}.jpg`),
+        }  
     ]
 
     return (

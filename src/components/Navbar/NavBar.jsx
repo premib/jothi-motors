@@ -27,8 +27,8 @@ import Logo from '../Logo';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Wholesale Dealers', 'Auto Spares', 'Other Businesses', 'Contact Us'];
-const jothiBrands = ['Jothi car world']
+const navItems = ['Home', 'Our Products', 'Contact Us'];
+const jothiBrands = ['Adeena Gold', 'Anupam Industries', 'Camoflex', 'GDR', 'Spark', 'Paltex', 'Vir', 'SFI', 'Vasco Gold', 'CI', 'Super Auto'].sort();
 const actualWindow = window
 
 function NavBar({ window, onHeightChange }) {
@@ -62,7 +62,9 @@ function NavBar({ window, onHeightChange }) {
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Jothi Motors
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}>
+          <Logo />&nbsp;Jothi Motors
+        </Link>
       </Typography>
       <Divider />
       <List>
@@ -70,7 +72,7 @@ function NavBar({ window, onHeightChange }) {
           navItems.map((item) => {
             let href = item.toLowerCase().replace(/\s+/g, '-')
 
-            if (item === 'Other Businesses') {
+            if (item === 'Our Products') {
               return (
                 <>
                   <ListItem key={item} disablePadding >
@@ -86,7 +88,7 @@ function NavBar({ window, onHeightChange }) {
 
                           let href = brand.toLowerCase().replace(/\s+/g, '-')
                           return (
-                            <ListItemButton href={href} key={brand} sx={{ p: 0, pl: 4 }}>
+                            <ListItemButton href={`/our-brands/${href}`} key={brand} sx={{ p: 0, pl: 4 }}>
                               <ListItemText primary={brand} />
                             </ListItemButton>
                           )
@@ -143,17 +145,18 @@ function NavBar({ window, onHeightChange }) {
           <IconButton
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, textAlign: 'left' }}
+            sx={{ flexGrow: 1, display: 'flex', justifyContent: { xs: 'center', sm: 'left'}, alignItems: 'center' }}
           >
-            <Link to="/">
+            <Link to="/" style={{display: 'flex', justifyContent: 'center'}}>
               <Logo />
+              <Typography variant="h6" component="span" sx={{ ml: 1, color: 'white', fontWeight: 'bold', display: {sm: 'none'}, alignSelf: 'center' }}>Jothi Motors</Typography>
             </Link>
           </IconButton>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => {
               let href = item.toLowerCase().replace(/\s+/g, '-')
 
-              if (item === 'Other Businesses') {
+              if (item === 'Our Products') {
                 return (
                   <>
                     <Button sx={{ color: '#fff', marginRight: '10px' }}
@@ -174,7 +177,7 @@ function NavBar({ window, onHeightChange }) {
                       {
                         jothiBrands.map((brand) => {
                           let href = brand.toLowerCase().replace(/\s+/g, '-')
-                          return <MenuItem key={brand} onClick={() => handleRedirect(href)}>{brand}</MenuItem>
+                          return <MenuItem key={brand} onClick={() => handleRedirect('/our-brands/' + href)}>{brand}</MenuItem>
                         })
                       }
                     </Menu>

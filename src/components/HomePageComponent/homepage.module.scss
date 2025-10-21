@@ -63,10 +63,67 @@
     .title {
         text-transform: uppercase;
     }
+
+    .aboutUsCards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 32px;
+        margin-bottom: 40px;
+
+        .card {
+            background-color: unset;
+
+            h5,
+            h3 {
+                margin: 0;
+                padding: 0;
+            }
+
+            h4 {
+                opacity: 0.6;
+                margin: 10px 0;
+            }
+
+            span {
+                background-color: $color3;
+                display: inline-block;
+                width: 68px;
+                height: 68px;
+                padding: 6px;
+                border-radius: 50%;
+                position: relative;
+
+                svg {
+                    color: white;
+                    position: absolute;
+                    top: calc(50% - 17.5px);
+                    left: calc(50% - 17.5px);
+
+                    &[data-testid="GavelIcon"] {
+                        left: calc(50% - 16px);
+                        top: calc(50% - 19px);
+                    }
+                }
+            }
+
+            img {
+                height: 60px;
+                width: 60px;
+                object-fit: cover;
+            }
+
+            .title,
+            .information {
+                // background-color: red;
+            }
+        }
+    }
+    
     .cards {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 32px;
+        gap: 60px;
 
         @media screen and (max-width: 768px) {
             grid-template-columns: 1fr;
@@ -84,8 +141,8 @@
             align-items: center;
 
             img {
-                width: 100%;
-                height: 320px;
+                width: 80%;
+                height: 260px;
                 border-radius: 55%;
                 object-fit: cover;
                 object-position: bottom;

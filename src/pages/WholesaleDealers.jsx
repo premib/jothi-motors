@@ -26,9 +26,9 @@ export default function WholesaleDealers() {
             logo: '/images/wholesale-dealers/logo/tata-logo.png'
         },
         {
-            name: 'FORD',
-            images: Array.from({ length: 1 }).map((_, index) => `/images/wholesale-dealers/ford-${index + 1}.jpg`),
-            logo: '/images/wholesale-dealers/logo/ford-logo.png'
+            name: 'MAHINDRA',
+            images: Array.from({ length: 24 }).map((_, index) => `/images/wholesale-dealers/mahindra-${index + 1}.jpg`),
+            logo: '/images/wholesale-dealers/logo/mahindra-logo.png'
         },
         {
             name: 'EICHER',
@@ -51,9 +51,9 @@ export default function WholesaleDealers() {
             logo: '/images/wholesale-dealers/logo/toyota-logo.png'
         },
         {
-            name: 'MAHINDRA',
-            images: Array.from({ length: 24 }).map((_, index) => `/images/wholesale-dealers/mahindra-${index + 1}.jpg`),
-            logo: '/images/wholesale-dealers/logo/mahindra-logo.png'
+            name: 'FORD',
+            images: Array.from({ length: 1 }).map((_, index) => `/images/wholesale-dealers/ford-${index + 1}.jpg`),
+            logo: '/images/wholesale-dealers/logo/ford-logo.png'
         },
         {
             name: 'CHEVROLET',
